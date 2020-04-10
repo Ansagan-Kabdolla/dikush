@@ -1,0 +1,27 @@
+{% extends "publication/Basic.html" %}
+{% load static %}
+
+{% block link %}
+<title>Контакты</title>
+<link rel="stylesheet" href="{% static 'publication/style_article.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+
+ <div class="container">
+            <h2 class="content_title">Недавно добавленные работы</h2>
+            <div class="article_list">
+                {% for publ in publs %}
+                <div class="article_item">
+                    <a href="#" class="article_item_link">
+                        <img src="{% static 'publication/img/article.png' %}" alt="" class="article_img">
+                    </a>
+                    <a href="#" class="article_item_link"><p class="article_description article_title">{{publ.author}}</p></a>
+                    <p class="article_description">{{publ.description}}</p>
+                    <span class="article_description article_date">{{publ.date}}</span>
+
+                </div>
+                {% endfor %}
+{% endblock %}

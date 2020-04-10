@@ -1,0 +1,48 @@
+{% extends "publication/Basic.html" %}
+{% load static %}
+
+{% block link %}
+<title>Контакты</title>
+<link rel="stylesheet" href="{% static 'publication/style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+        <div class="container" style="text-align:center">
+            {% if form.errors %}
+<div class="lgn">
+  <p>Your username and password didn't match. Please try again.</p>
+</div>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+  {% else %}
+<div class="lgn">
+    <p>Авторизация пользователя</p>
+        <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+
+        <tr>
+          <td>Логин   </td>
+          <td>{{ form.username }}</td>
+        </tr>
+<hr>
+        <tr>
+          <td>Пароль   </td>
+          <td>{{ form.password }}</td>
+        </tr>
+        </table>
+<hr>
+        <input type="submit" value="login" class="lgn_inpt" />
+        <input type="hidden" name="next" value="{{ add }}" />
+        </form>
+</div>
+  {% endif %}
+{% endif %}
+        </div>
+{# Assumes you setup the password_reset view in your URLconf #}
+{% endblock %}

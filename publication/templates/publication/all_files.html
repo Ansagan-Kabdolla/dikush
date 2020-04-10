@@ -1,0 +1,25 @@
+{% extends "publication/Basic.html" %}
+{% load static %}
+
+{% block link %}
+<title>Контакты</title>
+<link rel="stylesheet" href="{% static 'publication/style_best.css' %}">
+{% endblock %}
+
+
+{% block content %}
+        <div class="container">
+            <h2 class="content_title">Лучшие работы</h2>
+            <div class="article_list">
+                <ul class="best_article_list">
+                    {% for publ in publs %}
+                    <li class="article_item">
+                       <span class="number_count"></span>
+                        <a href="#"><p class=" article_text article_name">{{publ.description}}</p></a>
+                        <p class="article_text  article_owner">{{publ.author}}</p>
+                        <span class="article_text article_rtn">{{publ.serius}}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+        </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "publication/Basic.html" %}
+{% load static %}
+
+{% block link %}
+<title>Контакты</title>
+<link rel="stylesheet" href="{% static 'publication/style_contacts.css' %}">
+{% endblock %}
+
+{% block menu %}
+                    <li class="menu_item"><a href="{% url 'index' %}" class="menu_item_link">О журнале</a></li>
+                    <li class="menu_item"><a href="{% url 'ethicks' %}" class="menu_item_link">Этика публикации</a></li>
+                    <li class="menu_item"><a href="{% url 'gid' %}" class="menu_item_link">Гид для автора</a></li>
+                    <li class="menu_item"><a href="{% url 'contacts' %}" class="menu_item_link last active_link">Контакты</a></li>
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+            <h2 class="content_title">НАШИ КОНТАКТЫ</h2>
+            <p class="content_text">
+                Республиканское государственное предприятие на праве хозяйственного ведения "Кокшетауский государственный университет имени Ш.Уалиханова" Министерства образования и науки Республики Казахстан</p>
+            <p class="content_text"><span class="text_content_title">Адрес: </span>Республика Казахстан, 020000, город Кокшетау,</p>
+
+            <p class="content_text"><span class="text_content_title">Корпус №1:</span> ул. Абая 76, главный корпус</p>
+
+            <p class="content_text"><span class="text_content_title">Корпус №2:</span> ул. Темирбекова 30</p>
+
+            <p class="content_text"><span class="text_content_title">Учебный корпус №3, Медицинский факультет:</span> Ақана Сері, 1a</p>
+
+            <p class="content_text"><span class="text_content_title">Корпус №4:</span> ул. Ақана Сері 24</p>
+
+            <p class="content_text"><span class="text_content_title">Корпус №5:</span> ул.Куанышева 170</p>
+
+            <p class="content_text"><span class="text_content_title">тел/факс отдела док. обеспечения:</span> +7(7162) 255597</p>
+
+            <p class="content_text"><span class="text_content_title">телефон приемной комиссии:</span> 8(7162) 72-11-12</p>
+
+            <p class="content_text"><span class="text_content_title">тел. факультета заочно-дистанционного обучения:</span> 8(7162) 25-51-69</p>
+
+            <p class="content_text"><span class="text_content_title">е-mail: </span>mail@kgu.kz, mailkgukz@gmail.com</p>
+
+            <p class="content_text"><span class="text_content_title">skype</span>: kgu.kz</p>
+        </div>
+{% endblock %}

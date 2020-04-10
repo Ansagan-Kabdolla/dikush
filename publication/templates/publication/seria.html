@@ -1,0 +1,21 @@
+{% extends "publication/Basic.html" %}
+{% load static %}
+
+{% block link %}
+<title>Контакты</title>
+<link rel="stylesheet" href="{% static 'publication/style_pred.css' %}">
+{% endblock %}
+
+{% block menu %}
+                    <li class="menu_item"><a href="{% url 'index' %}" class="menu_item_link">О журнале</a></li>
+                    <li class="menu_item"><a href="{% url 'ethicks' %}" class="menu_item_link">Этика публикации</a></li>
+                    <li class="menu_item"><a href="{% url 'gid' %}" class="menu_item_link">Гид для автора</a></li>
+                    <li class="menu_item"><a href="{% url 'contacts' %}" class="menu_item_link last">Контакты</a></li>
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+            <h2 class="content_title">{{preds.name}}</h2>
+            <p>{% autoescape off %}{{ preds.description }}{% endautoescape %}</p>
+        </div>
+{% endblock %}

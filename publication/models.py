@@ -23,7 +23,7 @@ class Filepdf(models.Model):
 
 class Predmeti(models.Model):
     name = models.CharField(max_length=100,verbose_name="Название")
-    img_url = models.ImageField(upload_to='', verbose_name="Фото")
+    img_url = models.FileField(upload_to='', verbose_name="Фото")
     description = models.TextField(verbose_name="Описание")
     date = models.DateTimeField(auto_now_add=True, db_index=True)
 
